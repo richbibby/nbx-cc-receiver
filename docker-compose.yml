@@ -1,0 +1,22 @@
+services:
+  app:
+    image: python:3.12-slim
+    working_dir: /app
+    command: bash -lc "pip install flask requests && python app.py"
+    env_file: .env
+    environment:
+      PORT: "5100"
+    volumes:
+      - ./app.py:/app/app.py:ro
+    ports:
+      - "5100:5100"
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    command: http --log stdout app:5100
+    environment:
+      NGROK_CONFIG: /etc/ngrok.yml
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml:ro
+    depends_on:
+      - app

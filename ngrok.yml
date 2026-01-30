@@ -1,0 +1,8 @@
+version: "2"
+authtoken: 34h1u9sQ9EFqUmf5o2SCzg7ySr5_42xZRgCEoZY3hUaukMSCD
+tunnels:
+  app:
+    proto: http
+    addr: app:5000
+    schemes:
+      - https
