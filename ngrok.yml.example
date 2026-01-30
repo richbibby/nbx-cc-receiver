@@ -1,5 +1,5 @@
 version: "2"
-authtoken: YOUR_NGROK_AUTHTOKEN_HERE
+# authtoken is set via NGROK_AUTHTOKEN environment variable in .env
 tunnels:
   app:
     proto: http

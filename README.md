@@ -58,24 +58,16 @@ DEPLOYMENT_MODE=Deploy
 # - generic: Uses /interface/{id}
 # - wireless: Uses /wirelessSettings/interfaces/{id}
 INTERFACE_PATH=generic
-```
 
-### 3. Configure ngrok
-
-Edit `ngrok.yml` and replace the authtoken with your own:
-
-```yaml
-version: "2"
-authtoken: YOUR_NGROK_AUTHTOKEN_HERE
-tunnels:
-  app:
-    proto: http
-    addr: app:5100
-    schemes:
-      - https
+# ngrok authentication token
+NGROK_AUTHTOKEN=your-ngrok-authtoken-here
 ```
 
 Get your ngrok authtoken from: https://dashboard.ngrok.com/get-started/your-authtoken
+
+### 3. Configure ngrok (optional)
+
+The `ngrok.yml` file is pre-configured and doesn't require changes. The authtoken is read from the `NGROK_AUTHTOKEN` environment variable in your `.env` file. If you need to customize ngrok settings, you can edit `ngrok.yml`
 
 ### 4. Start the Application
 
