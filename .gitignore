@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# ngrok configuration (contains authtoken)
+ngrok.yml
+
 # Python
 __pycache__/
 *.py[cod]

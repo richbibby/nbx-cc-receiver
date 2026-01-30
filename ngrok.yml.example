@@ -1,0 +1,8 @@
+version: "2"
+authtoken: YOUR_NGROK_AUTHTOKEN_HERE
+tunnels:
+  app:
+    proto: http
+    addr: app:5100
+    schemes:
+      - https
